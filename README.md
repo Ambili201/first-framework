@@ -1,1 +1,1 @@
-# WohligFramework
+# My first framework

@@ -20,6 +20,7 @@ router.get(
     }
 )
 router.post("/", (req, res) => {
+    console.log("checking git ")
     StudentModel.saveData(req.body, res.callback)
 })
 router.put("/:id", (req, res) => {
