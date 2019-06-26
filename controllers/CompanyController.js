@@ -1,7 +1,7 @@
 const router = Router()
 router.get("/", (req, res) => {
     console.log("in controller")
-    StudentModel.search(req.query, res.callback)
+    CompanyModel.search(req.query, res.callback)
 })
 router.get(
     "/:id",
@@ -17,20 +17,31 @@ router.get(
         }
     }),
     (req, res) => {
-        StudentModel.getOne(req.params, res.callback)
+        CompanyModel.getOne(req.params, res.callback)
     }
 )
-router.post("/", (req, res) => {
-    StudentModel.saveData(req.body, res.callback)
-})
+router.post("/save", (req, res) => {
+   CompanyModel.saveData(req.body,res.callback)
+}) 
 router.put("/:id", (req, res) => {
-    res.send(`Update For Id ${req.params.id}`)
+    CompanyModel.updateData(req.params,req.body, res.callback)
+  
+    
 })
 router.patch("/:id", (req, res) => {
     res.send(`Path For Id ${req.params.id}`)
 })
 router.delete("/:id", (req, res) => {
-    res.send(`Delete For Id ${req.params.id}`)
+    CompanyModel.deleteData(req.params,res.callback)
+  
 
 })
+router.get("/count", (req, res) => {
+    CompanyModel.countData(req.body,res.callback)
+  
+
+})
+
+
+
 export default router

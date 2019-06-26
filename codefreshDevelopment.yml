@@ -5,6 +5,7 @@ stages:
     - "integration"
     - "push"
     - "deploy"
+    
 steps:
     main_clone:
         type: "git-clone"

@@ -8,6 +8,11 @@ export default {
         const students = await Student.find().exec()
         callback(null, students)
     },
+    /**
+     * 
+     * @param {*} data 
+     * @param {*} callback 
+     */
     getOne(data, callback) {
         Student.findOne({
             _id: data.id
