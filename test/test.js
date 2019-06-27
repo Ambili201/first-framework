@@ -11,5 +11,5 @@ require("@babel/register")({
     
     chai.use(chaiHttp)
     global.adminUrl = env.url + ":" + env.port + "/"
-    
+    console.log("url:::",global.adminUrl)
     require("./Company/CompanyApi.js")

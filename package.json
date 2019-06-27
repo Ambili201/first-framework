@@ -10,7 +10,9 @@
         "start": "nodemon index.js",
         "rohini": "node index.js",
         "build": "docker build -t wohlig/wohlig-framework:latest .",
-        "serve": "docker run -p 3000:3000 wohlig/wohlig-framework:latest"
+        "serve": "docker run -p 3000:3000 wohlig/wohlig-framework:latest",
+        "test": "nyc --reporter=html --reporter=text mocha",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
     },
     "dependencies": {
         "chai": "^4.2.0",
@@ -26,6 +28,7 @@
         "@babel/preset-env": "^7.1.0",
         "@babel/register": "^7.0.0",
         "@babel/runtime": "^7.1.2",
+        "coveralls": "^3.0.4",
         "eslint": "^5.6.0"
     },
     "prettier": {

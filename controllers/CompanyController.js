@@ -1,5 +1,5 @@
 const router = Router()
-router.get("/", (req, res) => {
+router.post("/search", (req, res) => {
     console.log("in controller")
     CompanyModel.search(req.query, res.callback)
 })
